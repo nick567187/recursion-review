@@ -3,12 +3,14 @@ describe('parseJSON', function() {
 
   it('should match the result of calling JSON.parse', function() {
     parseableStrings.forEach(function(test) {
+// debugger
       var result = parseJSON(test);
       var expected = JSON.parse(test);
       var equality = _.isEqual(result, expected); // why can't we use `===` here?
       // Replace this line with an `expect` statement that tests
       // the behavior described by the `it` string
-      throw new Error('Test is missing.')
+      expect(result).to.deep.equal(expected)
+      // throw new Error('Test is missing.')
     });
   });
 
